@@ -1,0 +1,54 @@
+[
+    {
+        "clientId": "4bf78cd7-b6cb-4736-8d2c-94cec17960f8",
+        "user": {
+            "userId": "6217a189-d6a0-4add-9ce9-dfaaa50c8833"
+        },
+        "clientName": "Test Client 1",
+        "gender": "L",
+        "birthDate": "1981-04-23",
+        "email": "client1@mail.com",
+        "agencyName": "Test Agency 1",
+        "agencyAddress": "Bandung",
+        "isActive": true
+    },
+    {
+        "clientId": "0d7d4694-0fcb-45ff-9400-0ff717ebd096",
+        "user": {
+            "userId": "32b7bbf1-b460-4200-b846-ad9468ce7374"
+        },
+        "clientName": "Test Client 2",
+        "gender": "L",
+        "birthDate": "1984-05-23",
+        "email": "client2@mail.com",
+        "agencyName": "Test Agency 2",
+        "agencyAddress": "Jakarta",
+        "isActive": true
+    },
+    {
+        "clientId": "3cb3c5ef-923f-4a61-8e12-fbcdd0faeb49",
+        "user": {
+            "userId": "0003d2f0-32b3-4a0f-82d2-b6a0ffc1e9c3"
+        },
+        "clientName": "Test Client 3",
+        "gender": "P",
+        "birthDate": "1989-04-01",
+        "email": "client3@mail.com",
+        "agencyName": "Test Agency 3",
+        "agencyAddress": "Palembang",
+        "isActive": true
+    },
+    {
+        "clientId": "532c525b-198d-48e2-bd07-7580a6f2025f",
+        "user": {
+            "userId": "157a7912-f386-4edc-9cfa-99ac42aa450a"
+        },
+        "clientName": "Test Client 4",
+        "gender": "P",
+        "birthDate": "1991-01-07",
+        "email": "client4@mail.com",
+        "agencyName": "Test Agency 4",
+        "agencyAddress": "Surabaya",
+        "isActive": true
+    }
+]

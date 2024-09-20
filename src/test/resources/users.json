@@ -1,0 +1,38 @@
+[
+    {
+        "userId": "6217a189-d6a0-4add-9ce9-dfaaa50c8833",
+        "username": "test_person_1",
+        "email": "person1@mail.com",
+        "firstName": "Person",
+        "lastName": "One",
+        "password": "personone",
+        "isActive": true
+    },
+    {
+        "userId": "32b7bbf1-b460-4200-b846-ad9468ce7374",
+        "username": "test_person_2",
+        "email": "person2@mail.com",
+        "firstName": "Person",
+        "lastName": "Two",
+        "password": "persontwo",
+        "isActive": true
+    },
+    {
+        "userId": "0003d2f0-32b3-4a0f-82d2-b6a0ffc1e9c3",
+        "username": "test_person_3",
+        "email": "person3@mail.com",
+        "firstName": "Person",
+        "lastName": "Three",
+        "password": "personthree",
+        "isActive": true
+    },
+    {
+        "userId": "157a7912-f386-4edc-9cfa-99ac42aa450a",
+        "username": "test_person_4",
+        "email": "person4@mail.com",
+        "firstName": "Person",
+        "lastName": "Four",
+        "password": "personfour",
+        "isActive": true
+    }
+]

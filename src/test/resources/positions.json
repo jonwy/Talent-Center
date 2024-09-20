@@ -1,0 +1,58 @@
+[
+    {
+        "positionId": "1a090f11-5e0d-4f10-8c0a-59ecba915f1a",
+        "positionName": "Web Developer"
+    },
+    {
+        "positionId": "b02a1f42-6e12-4b8b-9a62-82e3e7b86a44",
+        "positionName": "Scrum Master"
+    },
+    {
+        "positionId": "dc6a9351-48f2-464f-a758-438918ee3a8c",
+        "positionName": "Analyst"
+    },
+    {
+        "positionId": "16cb24d4-0ac3-41e9-90c2-94cb35b3cc6d",
+        "positionName": "Web Front-End Developer"
+    },
+    {
+        "positionId": "e9d63f1a-d9c5-4d6e-9d0f-06f6f6ed752a",
+        "positionName": "Web Back-End Developer"
+    },
+    {
+        "positionId": "a594d4ea-c079-4294-943d-2b78f2e9a5c1",
+        "positionName": "Quality Assurance"
+    },
+    {
+        "positionId": "c1d23a9a-568f-4dab-92c2-78e5bbab3a6a",
+        "positionName": "UI/UX Designer"
+    },
+    {
+        "positionId": "e176b792-049e-40b2-91b0-62dd2f3a401b",
+        "positionName": "Project Manager"
+    },
+    {
+        "positionId": "86ac9ef9-90a5-412f-90fc-5ceff7be0a31",
+        "positionName": "Android Developer"
+    },
+    {
+        "positionId": "e6b01a8c-237c-4ff5-9557-1eeeec09214c",
+        "positionName": "Desktop Developer"
+    },
+    {
+        "positionId": "166eb76f-e198-4ac1-aa82-91d3ac2c37a5",
+        "positionName": "Video Game Developer"
+    },
+    {
+        "positionId": "3bf9a3fb-d132-49fa-b017-c3866c4888ad",
+        "positionName": "Graphics Programmer"
+    },
+    {
+        "positionId": "53924716-e09b-4295-9e80-e4b2111d671c",
+        "positionName": "IOS Developer"
+    },
+    {
+        "positionId": "65188a20-9200-48a9-a1a6-a748899c7c90",
+        "positionName": "Software Engineer"
+    }
+]

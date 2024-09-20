@@ -1,0 +1,10 @@
+[
+    {
+        "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+        "employeeStatusName": "Active"
+    },
+    {
+        "employeeStatusId": "7d39f674-dd1e-4f6d-8436-11e1a162734b",
+        "employeeStatusName": "Not Active"
+    }
+]

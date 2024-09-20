@@ -1,0 +1,69 @@
+#-----------------------------------
+--- # Application
+#-----------------------------------
+
+spring:
+  application:
+    name: APP_NAME
+  profiles:
+    active:
+      - "@spring.profiles.active@"
+  main:
+    lazy-initialization: false
+server:
+  port: 8081
+
+--- ## Production
+
+spring:
+  config:
+    activate:
+      on-profile: "production"
+  main:
+    lazy-initialization: true
+         
+#-----------------------------------
+--- # i18n & L10n
+#-----------------------------------
+
+spring:
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages
+
+#-----------------------------------
+--- # Logging
+#-----------------------------------
+
+logging:
+  level:
+    com:
+      tujuhsembilan: TRACE
+
+--- ## Production
+
+spring:
+  config:
+    activate:
+      on-profile: "production"
+logging:
+  level:
+    com:
+      tujuhsembilan: INFO
+
+#-----------------------------------
+--- # Miscellanous
+#-----------------------------------
+
+spring:
+  output:
+    ansi:
+      enabled: always
+
+---
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB

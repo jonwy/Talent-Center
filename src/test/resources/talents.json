@@ -1,0 +1,390 @@
+[
+    {
+        "talentId": "84dbbd22-c7bc-4915-90ba-5db2fafad1ef",
+        "talentName": "mrdevsadasmdalksmdlakmldamklsd",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/profile_mrdevsadasmdalksmdlakmldamklsd_1000000_Senior_1721736057555.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=da974470e341ec83b1cd7029b58423bc6e27301817abf774bf14d057c42bb40e",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "0126dbf5-ac95-4567-aa23-34ec973f93fa",
+            "talentStatusName": "Not Onsite"
+        },
+        "talentAvailibility": true,
+        "experience": 20,
+        "employeeStatus": {
+            "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+            "employeeStatusName": "Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "22848659-c9e8-4df4-bd86-24c215442db3",
+            "talentLevelName": "Senior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "d50dfab2-a97c-4534-8676-0a7355f1d303",
+                "skillsetName": "Golang"
+            },
+            {
+                "skillsetId": "0e39324c-97b8-4868-87d6-d82584769242",
+                "skillsetName": "Java"
+            },
+            {
+                "skillsetId": "55291562-0ed6-420b-881a-6e77186d7141",
+                "skillsetName": "Ruby On Rails"
+            },
+            {
+                "skillsetId": "7abe1a4f-86fc-46a8-be41-51e8533e2654",
+                "skillsetName": "ReactJS"
+            },
+            {
+                "skillsetId": "22a52814-2872-4994-98da-de5c075cb0e2",
+                "skillsetName": "Laravel"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "166eb76f-e198-4ac1-aa82-91d3ac2c37a5",
+                "positionName": "Video Game Developer"
+            },
+            {
+                "positionId": "dc6a9351-48f2-464f-a758-438918ee3a8c",
+                "positionName": "Analyst"
+            },
+            {
+                "positionId": "e176b792-049e-40b2-91b0-62dd2f3a401b",
+                "positionName": "Project Manager"
+            },
+            {
+                "positionId": "b02a1f42-6e12-4b8b-9a62-82e3e7b86a44",
+                "positionName": "Scrum Master"
+            },
+            {
+                "positionId": "3bf9a3fb-d132-49fa-b017-c3866c4888ad",
+                "positionName": "Graphics Programmer"
+            },
+            {
+                "positionId": "e6b01a8c-237c-4ff5-9557-1eeeec09214c",
+                "positionName": "Desktop Developer"
+            },
+            {
+                "positionId": "a594d4ea-c079-4294-943d-2b78f2e9a5c1",
+                "positionName": "Quality Assurance"
+            },
+            {
+                "positionId": "c1d23a9a-568f-4dab-92c2-78e5bbab3a6a",
+                "positionName": "UI/UX Designer"
+            },
+            {
+                "positionId": "53924716-e09b-4295-9e80-e4b2111d671c",
+                "positionName": "IOS Developer"
+            }
+        ],
+        "cellphone": "12313123",
+        "email": "a@example.com"
+    },
+    {
+        "talentId": "15db4380-8bef-4e32-a482-a6eecc818e7f",
+        "talentName": "iya",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/iya_234_Senior_1721626792145.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2fdc6f4b88e0bd67417720da32c9fa5ca333ccd09178f6281b9be60aebbda94c",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "feee9f36-a978-455d-b324-9d360421d068",
+            "talentStatusName": "Onsite"
+        },
+        "talentAvailibility": true,
+        "experience": 234,
+        "employeeStatus": {
+            "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+            "employeeStatusName": "Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "22848659-c9e8-4df4-bd86-24c215442db3",
+            "talentLevelName": "Senior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "7abe1a4f-86fc-46a8-be41-51e8533e2654",
+                "skillsetName": "ReactJS"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "c1d23a9a-568f-4dab-92c2-78e5bbab3a6a",
+                "positionName": "UI/UX Designer"
+            }
+        ],
+        "cellphone": "082161337870",
+        "email": "123@gmail.com"
+    },
+    {
+        "talentId": "6d077650-ab4f-478b-98fe-bed0920a8f3d",
+        "talentName": "abc defg",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/abc%20def_234_Junior_2024-07-22%3A112816.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f3c4ee6c29df1aa4205b5ad9c6e068c5ac932f7de56773a25177d2f69f76cd55",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "feee9f36-a978-455d-b324-9d360421d068",
+            "talentStatusName": "Onsite"
+        },
+        "talentAvailibility": true,
+        "experience": 234,
+        "employeeStatus": {
+            "employeeStatusId": "7d39f674-dd1e-4f6d-8436-11e1a162734b",
+            "employeeStatusName": "Not Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "e0c3c066-2ac2-40bf-971b-2de2c9003be6",
+            "talentLevelName": "Junior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "8431ff69-f7b5-4401-a331-310eb8139583",
+                "skillsetName": ".NET"
+            },
+            {
+                "skillsetId": "710030ca-9995-4e70-8b55-7bc165ad09f3",
+                "skillsetName": "PHP"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "166eb76f-e198-4ac1-aa82-91d3ac2c37a5",
+                "positionName": "Video Game Developer"
+            },
+            {
+                "positionId": "1a090f11-5e0d-4f10-8c0a-59ecba915f1a",
+                "positionName": "Web Developer"
+            },
+            {
+                "positionId": "a594d4ea-c079-4294-943d-2b78f2e9a5c1",
+                "positionName": "Quality Assurance"
+            }
+        ],
+        "cellphone": "2343453434",
+        "email": "ahiman@gmail.com"
+    },
+    {
+        "talentId": "4b34011b-651e-412b-a844-3b57f11bbc95",
+        "talentName": "Ad amet ullamco com",
+        "talentPhotoFilename": "",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "0126dbf5-ac95-4567-aa23-34ec973f93fa",
+            "talentStatusName": "Not Onsite"
+        },
+        "talentAvailibility": true,
+        "experience": 200,
+        "employeeStatus": {
+            "employeeStatusId": "7d39f674-dd1e-4f6d-8436-11e1a162734b",
+            "employeeStatusName": "Not Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "64d5512c-bd45-4211-97e0-2b069b264d05",
+            "talentLevelName": "Middle"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "d3e51a73-407e-4176-9c8b-5073bd9ce657",
+                "skillsetName": "Ruby"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "16cb24d4-0ac3-41e9-90c2-94cb35b3cc6d",
+                "positionName": "Web Front-End Developer"
+            }
+        ],
+        "cellphone": "06092992926",
+        "email": "kabagekoku@mailinator.com"
+    },
+    {
+        "talentId": "33f0e17d-c9be-4353-a5bc-abcc52c5fb7f",
+        "talentName": "mrdevs",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/profile_mrdevs_122_Senior_1721735691533.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8db0747b2373f34c37a49faa7696fb7c16cff4662dc9e8d4730cc4c5c550e4ec",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "0126dbf5-ac95-4567-aa23-34ec973f93fa",
+            "talentStatusName": "Not Onsite"
+        },
+        "talentAvailibility": null,
+        "experience": 122,
+        "employeeStatus": {
+            "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+            "employeeStatusName": "Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "22848659-c9e8-4df4-bd86-24c215442db3",
+            "talentLevelName": "Senior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "55291562-0ed6-420b-881a-6e77186d7141",
+                "skillsetName": "Ruby On Rails"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "166eb76f-e198-4ac1-aa82-91d3ac2c37a5",
+                "positionName": "Video Game Developer"
+            }
+        ],
+        "cellphone": "12321321",
+        "email": "a@example.com"
+    },
+    {
+        "talentId": "276f9d6f-a928-4153-b548-da2c5c946b33",
+        "talentName": "mrdevsNEWNEWNEW",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/profile_mrdevsNEWNEWNEW_122_Senior_1721735790929.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=25197b340a92f454a2348637ce6081aa8962b8b12c24b3d18a6fa0631fb3f633",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "0126dbf5-ac95-4567-aa23-34ec973f93fa",
+            "talentStatusName": "Not Onsite"
+        },
+        "talentAvailibility": null,
+        "experience": 122,
+        "employeeStatus": {
+            "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+            "employeeStatusName": "Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "22848659-c9e8-4df4-bd86-24c215442db3",
+            "talentLevelName": "Senior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "55291562-0ed6-420b-881a-6e77186d7141",
+                "skillsetName": "Ruby On Rails"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "166eb76f-e198-4ac1-aa82-91d3ac2c37a5",
+                "positionName": "Video Game Developer"
+            }
+        ],
+        "cellphone": "12321321",
+        "email": "a@example.com"
+    },
+    {
+        "talentId": "fa79366b-1714-4a57-b756-461190c9bb23",
+        "talentName": "mrdevs",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/profile_mrdevs_122_Senior_1721735023200.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1bd6e1a977bf3d89990efe37f2925fbf4dcfd706787ef3c1b5f14a99114cd7a6",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "0126dbf5-ac95-4567-aa23-34ec973f93fa",
+            "talentStatusName": "Not Onsite"
+        },
+        "talentAvailibility": null,
+        "experience": 122,
+        "employeeStatus": {
+            "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+            "employeeStatusName": "Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "22848659-c9e8-4df4-bd86-24c215442db3",
+            "talentLevelName": "Senior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "55291562-0ed6-420b-881a-6e77186d7141",
+                "skillsetName": "Ruby On Rails"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "166eb76f-e198-4ac1-aa82-91d3ac2c37a5",
+                "positionName": "Video Game Developer"
+            }
+        ],
+        "cellphone": "12321321",
+        "email": "a@example.com"
+    },
+    {
+        "talentId": "bd2b4e8e-59bd-4599-9c76-eb51174a6bed",
+        "talentName": "John Armstrong",
+        "talentPhotoFilename": "https://minio.cloudias79.com/talent-center-app/1696478555_-_profil_pancasila.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=devtalentcenter%2F20240724%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240724T041623Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e82a58d3ec2608004d76058d78bab53d4b11b1a4b308e62043380d18c63e4197",
+        "birthDate": "1999-Jul-3",
+        "talentDescription": "Nothing",
+        "talentCvFilename": "john.pdf",
+        "biographyVideoUrl": "john.com/bio/video",
+        "isAddToListEnable": true,
+        "isActive": true,
+        "talentStatus": {
+            "talentStatusId": "feee9f36-a978-455d-b324-9d360421d068",
+            "talentStatusName": "Onsite"
+        },
+        "talentAvailibility": true,
+        "experience": 100,
+        "employeeStatus": {
+            "employeeStatusId": "82dacb82-f0d6-4a09-9acb-ad67a2d9809e",
+            "employeeStatusName": "Active"
+        },
+        "talentLevel": {
+            "talentLevelId": "22848659-c9e8-4df4-bd86-24c215442db3",
+            "talentLevelName": "Senior"
+        },
+        "skillsets": [
+            {
+                "skillsetId": "d88c669d-e35f-4ae3-8404-6d11a8467db3",
+                "skillsetName": "Figma"
+            },
+            {
+                "skillsetId": "3520ca2e-561a-48c4-9e3e-87749ff154da",
+                "skillsetName": "C"
+            },
+            {
+                "skillsetId": "0e39324c-97b8-4868-87d6-d82584769242",
+                "skillsetName": "Java"
+            },
+            {
+                "skillsetId": "1fc9f28e-2302-43d0-8fc4-ef9905f23f16",
+                "skillsetName": "Spring Boot"
+            },
+            {
+                "skillsetId": "ea7fa05e-6586-4bd9-b293-1f762d6ee258",
+                "skillsetName": "C++"
+            }
+        ],
+        "positions": [
+            {
+                "positionId": "16cb24d4-0ac3-41e9-90c2-94cb35b3cc6d",
+                "positionName": "Web Front-End Developer"
+            }
+        ],
+        "cellphone": "080887330924",
+        "email": "patricia12@example.org"
+    }
+]

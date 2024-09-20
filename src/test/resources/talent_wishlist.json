@@ -1,0 +1,46 @@
+[
+    {
+        "talentWishlistId": "ff4291b3-45fe-41af-b3af-74e31b38d9ae",
+        "talent": {
+            "talentId": "84dbbd22-c7bc-4915-90ba-5db2fafad1ef"
+        },
+        "client": {
+            "clientId": "4bf78cd7-b6cb-4736-8d2c-94cec17960f8"
+        },
+        "wishlistDate": "2024-07-24",
+        "isActive": true
+    },
+    {
+        "talentWishlistId": "cf8a0b94-b1df-4946-801c-4c7812e41c1c",
+        "talent": {
+            "talentId": "15db4380-8bef-4e32-a482-a6eecc818e7f"
+        },
+        "client": {
+            "clientId": "0d7d4694-0fcb-45ff-9400-0ff717ebd096"
+        },
+        "wishlistDate": "2024-07-24",
+        "isActive": true
+    },
+    {
+        "talentWishlistId": "8d5be3b2-f507-4d21-806d-137149c8487a",
+        "talent": {
+            "talentId": "6d077650-ab4f-478b-98fe-bed0920a8f3d"
+        },
+        "client": {
+            "clientId": "3cb3c5ef-923f-4a61-8e12-fbcdd0faeb49"
+        },
+        "wishlistDate": "2024-07-24",
+        "isActive": true
+    },
+    {
+        "talentWishlistId": "aaae167d-35f9-4cdc-8f36-f44da6dd44d6",
+        "talent": {
+            "talentId": "4b34011b-651e-412b-a844-3b57f11bbc95"
+        },
+        "client": {
+            "clientId": "532c525b-198d-48e2-bd07-7580a6f2025f"
+        },
+        "wishlistDate": "2024-07-24",
+        "isActive": true
+    }
+]

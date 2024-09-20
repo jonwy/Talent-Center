@@ -1,0 +1,14 @@
+[
+    {
+        "talentStatusId": "feee9f36-a978-455d-b324-9d360421d068",
+        "talentStatusName": "Onsite"
+    },
+    {
+        "talentStatusId": "0126dbf5-ac95-4567-aa23-34ec973f93fa",
+        "talentStatusName": "Not Onsite"
+    },
+    {
+        "talentStatusId": "2bb69ed1-df80-4d01-ae1f-52de263c2953",
+        "talentStatusName": "Active"
+    }
+]

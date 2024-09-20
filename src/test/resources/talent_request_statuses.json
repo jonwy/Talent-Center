@@ -1,0 +1,14 @@
+[
+    {
+        "talentRequestStatusId": "f4d7f142-89a8-4e62-b972-2f2a32904f77",
+        "talentRequestStatusName": "On Progress"
+    },
+    {
+        "talentRequestStatusId": "03a316c9-f28e-47e2-a3ea-41baa65a1ed1",
+        "talentRequestStatusName": "Rejected"
+    },
+    {
+        "talentRequestStatusId": "23ab9ae7-f0cb-45f4-b7ab-ef6f10adbdd8",
+        "talentRequestStatusName": "Approve"
+    }
+]

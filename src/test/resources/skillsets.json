@@ -1,0 +1,82 @@
+[
+    {
+        "skillsetId": "ea7fa05e-6586-4bd9-b293-1f762d6ee258",
+        "skillsetName": "C++"
+    },
+    {
+        "skillsetId": "d50dfab2-a97c-4534-8676-0a7355f1d303",
+        "skillsetName": "Golang"
+    },
+    {
+        "skillsetId": "ee828ba1-c5b7-4815-8d9e-208122722614",
+        "skillsetName": "Python"
+    },
+    {
+        "skillsetId": "d3e51a73-407e-4176-9c8b-5073bd9ce657",
+        "skillsetName": "Ruby"
+    },
+    {
+        "skillsetId": "1fc9f28e-2302-43d0-8fc4-ef9905f23f16",
+        "skillsetName": "Spring Boot"
+    },
+    {
+        "skillsetId": "7abe1a4f-86fc-46a8-be41-51e8533e2654",
+        "skillsetName": "ReactJS"
+    },
+    {
+        "skillsetId": "0e39324c-97b8-4868-87d6-d82584769242",
+        "skillsetName": "Java"
+    },
+    {
+        "skillsetId": "8431ff69-f7b5-4401-a331-310eb8139583",
+        "skillsetName": ".NET"
+    },
+    {
+        "skillsetId": "5fbd86ab-f44c-4ab5-9a6b-21483098d9a1",
+        "skillsetName": "C#"
+    },
+    {
+        "skillsetId": "3520ca2e-561a-48c4-9e3e-87749ff154da",
+        "skillsetName": "C"
+    },
+    {
+        "skillsetId": "710030ca-9995-4e70-8b55-7bc165ad09f3",
+        "skillsetName": "PHP"
+    },
+    {
+        "skillsetId": "36270eaa-6aa0-462d-81e0-dbc95a56a2e4",
+        "skillsetName": "Angular"
+    },
+    {
+        "skillsetId": "22a52814-2872-4994-98da-de5c075cb0e2",
+        "skillsetName": "Laravel"
+    },
+    {
+        "skillsetId": "98e192b3-d854-4140-8e82-490bae5569b3",
+        "skillsetName": "Selenium"
+    },
+    {
+        "skillsetId": "63f3d6d5-71d8-48e2-825a-bed7feadd234",
+        "skillsetName": "Swift"
+    },
+    {
+        "skillsetId": "55291562-0ed6-420b-881a-6e77186d7141",
+        "skillsetName": "Ruby On Rails"
+    },
+    {
+        "skillsetId": "b4e68b15-1e7a-46c1-bfc1-4880252007c2",
+        "skillsetName": "Trello"
+    },
+    {
+        "skillsetId": "3c21e793-2c66-4859-9515-727b537f8e79",
+        "skillsetName": "Katalon"
+    },
+    {
+        "skillsetId": "d52e18a6-b5bb-4c0a-bcfc-3ae0734e202d",
+        "skillsetName": "CodeIgniter"
+    },
+    {
+        "skillsetId": "d88c669d-e35f-4ae3-8404-6d11a8467db3",
+        "skillsetName": "Figma"
+    }
+]
