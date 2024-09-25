@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.tujuhsembilan.app.dto.request.SaveTalentRequest;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.exception.DataNotFoundException;
 import com.tujuhsembilan.app.exception.ResourceNotFoundException;
 import com.tujuhsembilan.app.model.EmployeeStatus;
@@ -44,10 +44,12 @@ import com.tujuhsembilan.app.repository.TalentStatusRepository;
 import jakarta.transaction.Transactional;
 import lib.minio.MinioSrvc;
 import lib.minio.MinioSrvc.UploadOption;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 @Service
+@RequiredArgsConstructor
 public class AdminService {
     
     private static final String[] ALLOWED_CONTENT_TYPES = 
@@ -71,36 +73,8 @@ public class AdminService {
     private final PositionRepository positionRepository;
     private final SkillsetRepository skillsetRepository;
 
-    public AdminService(
-            final ModelMapper modelMapper,
-            final MinioSrvc minioSrvc,
-            final EmployeeStatusRepository employeeStatusRepository,
-            final TalentRepository talentRepository,
-            final TalentLevelRepository talentLevelRepository, 
-            final TalentMetadataRepository talentMetadataRepository,
-            final TalentPositionRepository talentPositionRepository,
-            final TalentSkillsetRepository talentSkillsetRepository,
-            final TalentStatusRepository talentStatusRepository,
-             /* to be deleted */
-             final PositionRepository positionRepository,
-            final SkillsetRepository skillsetRepository
-    ) {
-        this.minioSrvc = minioSrvc;
-
-        this.employeeStatusRepository = employeeStatusRepository;
-        this.talentRepository = talentRepository;
-        this.talentLevelRepository = talentLevelRepository;
-        this.talentMetadataRepository = talentMetadataRepository;
-        this.talentPositionRepository = talentPositionRepository;
-        this.talentSkillsetRepository = talentSkillsetRepository;
-        this.talentStatusRepository = talentStatusRepository;
-        // to be deleted
-        this.positionRepository = positionRepository;
-        this.skillsetRepository = skillsetRepository;
-    }
-
     @Transactional
-    public ResponseEntity<ApiResponse> saveTalent(MultipartFile[] fileRequests, SaveTalentRequest request) {
+    public ResponseEntity<MessageResponse> saveTalent(MultipartFile[] fileRequests, SaveTalentRequest request) {
 
         TalentLevel talentLevel = talentLevelRepository.findById(request.getTalentLevelId()).get();
         EmployeeStatus employeeStatus = employeeStatusRepository.findById(request.getEmployeeStatusId()).get();
@@ -129,7 +103,7 @@ public class AdminService {
 
         return ResponseEntity.ok()
             .body(
-                ApiResponse.builder()
+                MessageResponse.builder()
                     .message("Data talent saved")
                     .data(saved)
                     .status(HttpStatus.OK.toString())
@@ -139,7 +113,7 @@ public class AdminService {
     }
 
     @Transactional
-    public ResponseEntity<ApiResponse> updateDataTalent(MultipartFile[] files, SaveTalentRequest request) {
+    public ResponseEntity<MessageResponse> updateDataTalent(MultipartFile[] files, SaveTalentRequest request) {
         // check if there's a file to be uploaded
         Talent talent = talentRepository.findById(request.getTalentId()).orElseThrow(() -> new DataNotFoundException("Talent Tidak ditemukan"));
         TalentLevel talentLevel = talentLevelRepository.findById(request.getTalentLevelId()).orElseThrow(() -> new ResourceNotFoundException("Talent Level not found"));
@@ -177,7 +151,7 @@ public class AdminService {
         saveTalentMetadata(talent.getTalentId(), request.getTotalProjectCompleted());
         return ResponseEntity.ok()
             .body(
-                ApiResponse.builder()
+                MessageResponse.builder()
                     .message("Data talent updated")
                     .data(saved)
                     .status(HttpStatus.OK.toString())
@@ -222,10 +196,10 @@ public class AdminService {
                     talent.setTalentCvFilename(filename);
                 }
                 if (talent.getTalentId() == null) {
-                    minioSrvc.removeObject(filename, "talent-center-app");
+                    minioSrvc.removeObject(filename, "talent-dev");
                 }
                 minioSrvc
-                    .upload(file, "talent-center-app",
+                    .upload(file, "talent-dev",
                         opt -> UploadOption.builder().filename(
                             filename
                         ).build()
@@ -297,7 +271,7 @@ public class AdminService {
         talentMetadataRepository.save(talentMetadata);
     }
 
-    public ResponseEntity<ApiResponse> saveTalent2(MultipartFile[] fileRequests, SaveTalentRequest request) {
+    public ResponseEntity<MessageResponse> saveTalent2(MultipartFile[] fileRequests, SaveTalentRequest request) {
 
         List<Position> positions = positionRepository.findAll();
         List<Skillset> skillsets = skillsetRepository.findAll();
@@ -352,7 +326,7 @@ public class AdminService {
 
         return ResponseEntity.ok()
             .body(
-                ApiResponse.builder()
+                MessageResponse.builder()
                     .message("Data talent saved")
                     .data(talent)
                     .status(HttpStatus.OK.toString())

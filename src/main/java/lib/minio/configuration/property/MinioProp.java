@@ -12,6 +12,8 @@ public class MinioProp {
   private String url;
   private String username;
   private String password;
+  private String accessKey;
+  private String secretKey;
   private String getErrorMessage;
   private String postErrorMessage;
 }

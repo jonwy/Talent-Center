@@ -26,7 +26,7 @@ import org.springframework.http.ResponseEntity;
 
 import com.tujuhsembilan.app.dto.TalentRequestDto;
 import com.tujuhsembilan.app.dto.request.TalentApprovalRequest;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.model.Client;
 import com.tujuhsembilan.app.model.EmployeeStatus;
 import com.tujuhsembilan.app.model.Position;
@@ -102,10 +102,10 @@ public class TalentApprovalServiceTest {
         Page<TalentRequest> talentRequestPage = new PageImpl<>(subList, pageable, talentRequests.size());
         when(talentRequestRepository.findAll(any(Specification.class), eq(pageable))).thenReturn(talentRequestPage);
         talentApprovalService.getAllTalentApprovals(PageRequest.of(0, 8), null);
-        ResponseEntity<ApiResponse> response = talentApprovalService.getAllTalentApprovals(PageRequest.of(0, 8), null);
+        ResponseEntity<MessageResponse> response = talentApprovalService.getAllTalentApprovals(PageRequest.of(0, 8), null);
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse success = response.getBody();
+        MessageResponse success = response.getBody();
         assertNotNull(success);
         assertEquals(HttpStatus.OK.value(), success.getStatusCode());
         List<TalentRequestDto> talentRequestDtos = (List<TalentRequestDto>) success.getData();
@@ -134,10 +134,10 @@ public class TalentApprovalServiceTest {
         when(talentRequestStatusRepository.findByTalentRequestStatusNameAndCreatedByAllIgnoreCase(request.getAction(), "admin")).thenReturn(Optional.of(newRequestStatus));
 
         when(talentRequestRepository.save(talentToApprove)).thenReturn(talentApproved);
-        ResponseEntity<ApiResponse> response = talentApprovalService.approveTalentRequest(request);
+        ResponseEntity<MessageResponse> response = talentApprovalService.approveTalentRequest(request);
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse success = response.getBody();
+        MessageResponse success = response.getBody();
         assertNotNull(success);
         assertEquals("Talent request is " + newRequestStatus.getTalentRequestStatusName(), success.getMessage());
     }
@@ -163,10 +163,10 @@ public class TalentApprovalServiceTest {
         when(talentRequestStatusRepository.findByTalentRequestStatusNameAndCreatedByAllIgnoreCase(request.getAction(), "admin")).thenReturn(Optional.of(newRequestStatus));
 
         when(talentRequestRepository.save(talentToApprove)).thenReturn(talentApproved);
-        ResponseEntity<ApiResponse> response = talentApprovalService.approveTalentRequest(request);
+        ResponseEntity<MessageResponse> response = talentApprovalService.approveTalentRequest(request);
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse success = response.getBody();
+        MessageResponse success = response.getBody();
         assertNotNull(success);
         assertEquals("Talent request is " + newRequestStatus.getTalentRequestStatusName(), success.getMessage());
     }

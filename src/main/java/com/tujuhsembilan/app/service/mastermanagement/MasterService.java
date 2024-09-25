@@ -13,7 +13,7 @@ import com.tujuhsembilan.app.dto.SkillsetDto;
 import com.tujuhsembilan.app.dto.TalentLevelDto;
 import com.tujuhsembilan.app.dto.TalentRequestStatusDto;
 import com.tujuhsembilan.app.dto.TalentStatusDto;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.exception.ResourceNotFoundException;
 import com.tujuhsembilan.app.model.EmployeeStatus;
 import com.tujuhsembilan.app.model.Position;
@@ -58,7 +58,7 @@ public class MasterService {
         this.talentStatusRepository = talentStatusRepository;   
     }
 
-    public ResponseEntity<ApiResponse> getLevelOptionLists() {
+    public ResponseEntity<MessageResponse> getLevelOptionLists() {
         List<TalentLevel> talentLevels = talentLevelRepository.findAll();
         if (talentLevels == null || talentLevels.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -68,7 +68,7 @@ public class MasterService {
                                         .map(talentLevel -> modelMapper.map(talentLevel, TalentLevelDto.class))
                                         .toList();
         return ResponseEntity.ok().body(
-            ApiResponse.builder()
+            MessageResponse.builder()
                 .message("Data level option lists")
                 .total(talentLevelDtos.size())
                 .data(talentLevelDtos)
@@ -78,7 +78,7 @@ public class MasterService {
         );
     }
 
-    public ResponseEntity<ApiResponse> getTalentStatusOptionLists() {
+    public ResponseEntity<MessageResponse> getTalentStatusOptionLists() {
         List<TalentStatus> talentStatuses = talentStatusRepository.findAll();
         if (talentStatuses == null || talentStatuses.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -88,7 +88,7 @@ public class MasterService {
                                         .map(talentStatus -> TalentStatusDto.map(talentStatus))
                                         .toList();
         return ResponseEntity.ok().body(
-            ApiResponse.builder()
+            MessageResponse.builder()
                 .message("Data level option lists")
                 .total(talentStatusDtos.size())
                 .data(talentStatusDtos)
@@ -98,7 +98,7 @@ public class MasterService {
         );
     }
 
-    public ResponseEntity<ApiResponse> getEmployeeStatusOptionLists() {
+    public ResponseEntity<MessageResponse> getEmployeeStatusOptionLists() {
         List<EmployeeStatus> employeeStatuses = employeeStatusRepository.findAll();
         if (employeeStatuses == null || employeeStatuses.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -108,7 +108,7 @@ public class MasterService {
                                             .map(employeeStatus -> EmployeeStatusDto.map(employeeStatus))
                                             .toList();
         return ResponseEntity.ok().body(
-            ApiResponse.builder()
+            MessageResponse.builder()
                 .message("Data Employee Status Option Lists")
                 .total(employeeStatusDtos.size())
                 .data(employeeStatusDtos)
@@ -118,7 +118,7 @@ public class MasterService {
         );
     }
 
-    public ResponseEntity<ApiResponse> getSkillsetOptionLists() {
+    public ResponseEntity<MessageResponse> getSkillsetOptionLists() {
         List<Skillset> skillsets = skillsetRepository.findAll();
         if (skillsets == null || skillsets.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -128,7 +128,7 @@ public class MasterService {
                                         .toList();
 
         return ResponseEntity.ok().body(
-            ApiResponse.builder()
+            MessageResponse.builder()
                 .message("Data Skillsets option lists")
                 .total(skillsetDtos.size())
                 .data(skillsetDtos)
@@ -138,7 +138,7 @@ public class MasterService {
         );
     }
 
-    public ResponseEntity<ApiResponse> getTalentPositionOptionLists() {
+    public ResponseEntity<MessageResponse> getTalentPositionOptionLists() {
         List<Position> positions = positionRepository.findAll();
         if (positions == null || positions.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -148,7 +148,7 @@ public class MasterService {
                                         .map(item -> modelMapper.map(item, PositionDto.class))
                                         .toList();
         return ResponseEntity.ok().body(
-            ApiResponse.builder()
+            MessageResponse.builder()
                 .message("Data Position option lists")
                 .total(positionDtos.size())
                 .data(positionDtos)
@@ -158,8 +158,8 @@ public class MasterService {
         );
     }
 
-    public ResponseEntity<ApiResponse> getTalentRequestStatusOptionLists() {
-        List<TalentRequestStatus> talentRequestStatus = talentRequestStatusRepository.findAllByCreatedByIgnoreCase("admin");
+    public ResponseEntity<MessageResponse> getTalentRequestStatusOptionLists() {
+        List<TalentRequestStatus> talentRequestStatus = talentRequestStatusRepository.findAll();
         if (talentRequestStatus == null || talentRequestStatus.isEmpty()) {
             throw new ResourceNotFoundException("Talent Request Status Tidak Ditemukan");
         }
@@ -168,7 +168,7 @@ public class MasterService {
                                         .map(item -> modelMapper.map(item, TalentRequestStatusDto.class))
                                         .toList();
         return ResponseEntity.ok().body(
-            ApiResponse.builder()
+            MessageResponse.builder()
                 .message("Data Talent Request option lists")
                 .total(talentRequestStatusDtos.size())
                 .data(talentRequestStatusDtos)

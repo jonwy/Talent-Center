@@ -19,7 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.tujuhsembilan.app.dto.request.SaveTalentRequest;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.model.EmployeeStatus;
 import com.tujuhsembilan.app.model.Talent;
 import com.tujuhsembilan.app.model.TalentLevel;
@@ -85,10 +85,10 @@ public class AdminServiceTest {
         savedTalent.setTalentName("NOthing");
         when(talentRepository.save(any(Talent.class))).thenReturn(savedTalent);
 
-        ResponseEntity<ApiResponse> responseEntity = adminService.saveTalent(null, request);
+        ResponseEntity<MessageResponse> responseEntity = adminService.saveTalent(null, request);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        ApiResponse responseBody = responseEntity.getBody();
+        MessageResponse responseBody = responseEntity.getBody();
         assertNotNull(responseBody);
         assertEquals("Data talent saved", responseBody.getMessage());
         assertEquals(HttpStatus.OK.toString(), responseBody.getStatus());
@@ -142,10 +142,10 @@ public class AdminServiceTest {
                     .experience(5)
                     .build();
 
-        ResponseEntity<ApiResponse> responseEntity = adminService.updateDataTalent(null, request);
+        ResponseEntity<MessageResponse> responseEntity = adminService.updateDataTalent(null, request);
 
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        ApiResponse responseBody = responseEntity.getBody();
+        MessageResponse responseBody = responseEntity.getBody();
         assertNotNull(responseBody);
         assertEquals("Data talent updated", responseBody.getMessage());
         assertEquals(HttpStatus.OK.toString(), responseBody.getStatus());

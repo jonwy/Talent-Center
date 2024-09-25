@@ -30,30 +30,7 @@ public interface TalentRequestRepository extends JpaRepository<TalentRequest, UU
         JOIN TalentWishlist tw ON tr.talentWishlist.talentWishlistId = tw.talentWishlistId
     """)
     Page<TalentRequestProjection> findAllProjected(Pageable pageable);
-
-    // @Query(value = """
-    //     SELECT
-    //         tr.talent_request_id AS talentRequestId,
-    //         tr.request_date AS requestDate,
-    //         c.agency_name AS agencyName,
-    //         t.talent_name AS talentName,
-    //         trs.talent_request_status_name AS approvalStatus
-    //     FROM
-    //         public.talent_request tr
-    //     JOIN
-    //         public.talent_wishlist tw ON tr.talent_wishlist_id = tw.talent_wishlist_id
-    //     JOIN
-    //         public.client c ON tw.client_id = c.client_id
-    //     JOIN
-    //         public.talent t ON tw.talent_id = t.talent_id
-    //     JOIN
-    //         public.talent_request_status trs ON tr.talent_request_status_id = trs.talent_request_status_id
-    //     WHERE
-    //         (:requestDate IS NOT NULL AND tr.request_date = :requestDate)
-    //         AND (:requestStatusId IS NOT NULL AND tr.talent_request_status_id = :requestStatusId)
-    //         AND (:talentName IS NOT NULL AND t.talent_name = :talentName)
-    //         AND (:agencyName IS NOT NULL AND c.agency_name = :agencyName)
-    // """, nativeQuery = true)
+    
     @Query(value = """
         SELECT
             tr.talent_request_id AS talentRequestId,
@@ -88,28 +65,29 @@ public interface TalentRequestRepository extends JpaRepository<TalentRequest, UU
         @Param("agencyName") String agencyName);
 
     @Query(value = """
-        SELECT COUNT (*) FROM (
-        tr.talent_request_id AS talentRequestId,
+        SELECT COUNT (c.*) FROM (
+            SELECT
+            tr.talent_request_id AS talentRequestId,
             tr.request_date AS requestDate,
             c.agency_name AS agencyName,
             t.talent_name AS talentName,
             trs.talent_request_status_name AS approvalStatus
-        FROM
-            public.talent_request tr
-        JOIN
-            public.talent_wishlist tw ON tr.talent_wishlist_id = tw.talent_wishlist_id
-        JOIN
-            public.client c ON tw.client_id = c.client_id
-        JOIN
-            public.talent t ON tw.talent_id = t.talent_id
-        JOIN
-            public.talent_request_status trs ON tr.talent_request_status_id = trs.talent_request_status_id
-        WHERE
-            (:requestDate IS NOT NULL AND tr.request_date = :requestDate)
-            AND (:requestStatusId IS NOT NULL AND tr.talent_request_status_id = :requestStatusId)
-            AND (:talentName IS NOT NULL AND t.talent_name = :talentName)
-            AND (:agencyName IS NOT NULL AND c.agency_name = :agencyName)
-        )
+                FROM
+                    public.talent_request tr
+                JOIN
+                    public.talent_wishlist tw ON tr.talent_wishlist_id = tw.talent_wishlist_id
+                JOIN
+                    public.client c ON tw.client_id = c.client_id
+                JOIN
+                    public.talent t ON tw.talent_id = t.talent_id
+                JOIN
+                    public.talent_request_status trs ON tr.talent_request_status_id = trs.talent_request_status_id
+                WHERE
+                    (:requestDate IS NOT NULL AND tr.request_date = :requestDate)
+                    AND (:requestStatusId IS NOT NULL AND tr.talent_request_status_id = :requestStatusId)
+                    AND (:talentName IS NOT NULL AND t.talent_name = :talentName)
+                    AND (:agencyName IS NOT NULL AND c.agency_name = :agencyName)
+        ) as c
     """, nativeQuery = true)
     Long countAllProjectedWhere(
         @Param(value = "requestDate") Date requestDate, 

@@ -10,6 +10,7 @@ import com.tujuhsembilan.app.model.TalentRequestStatus;
 
 public interface TalentRequestStatusRepository extends JpaRepository<TalentRequestStatus, UUID> {
 
+    Optional<TalentRequestStatus> findByTalentRequestStatusNameIgnoreCase(String talentRequestStatusName);
     List<TalentRequestStatus> findAllByCreatedByIgnoreCase(String createdBy);
     Optional<TalentRequestStatus> findByTalentRequestStatusNameAndCreatedByAllIgnoreCase(String talentRequestStatusName, String createdBy);
 }

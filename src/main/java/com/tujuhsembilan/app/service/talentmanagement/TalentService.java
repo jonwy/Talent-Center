@@ -1,8 +1,10 @@
 package com.tujuhsembilan.app.service.talentmanagement;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -13,10 +15,13 @@ import org.springframework.stereotype.Service;
 import com.tujuhsembilan.app.dto.TalentDetailDto;
 import com.tujuhsembilan.app.dto.TalentsDto;
 import com.tujuhsembilan.app.dto.request.TalentsFilterRequest;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse.Meta;
+import com.tujuhsembilan.app.exception.DataNotFoundException;
 import com.tujuhsembilan.app.model.Talent;
 import com.tujuhsembilan.app.repository.TalentRepository;
 import com.tujuhsembilan.app.service.talentmanagement.specification.TalentSpecification;
+import com.tujuhsembilan.app.util.ResponseUtil;
 
 import lib.minio.MinioSrvc;
 
@@ -33,70 +38,44 @@ public class TalentService {
         this.minioSrvc = minioSrvc;
     }
 
-    public ResponseEntity<Object> getTalents(Pageable pageable, TalentsFilterRequest filterRequest) {
+    public ResponseEntity<MessageResponse> getTalents(Pageable pageable, TalentsFilterRequest filterRequest) {
         Integer pageSize = pageable.getPageSize();
         Integer pageNumber = pageable.getPageNumber();
         System.out.println("pagesize: " + pageSize);
         System.out.println("pageNumber: " + pageNumber);
         Specification<Talent> specification = TalentSpecification.filterTalents(filterRequest);
-
-        List<Talent> talents = null;
-        Long totalRows = 0L;
+        Page<Talent> talentPage = null;
 
         if (filterRequest != null) {
             System.out.println("filterRequest tidak null");
-            talents = talentRepository.findAll(specification, PageRequest.of(pageNumber, pageSize, pageable.getSort())).toList();
-            totalRows = talentRepository.count(specification);
+            talentPage = talentRepository.findAll(specification, PageRequest.of(pageNumber, pageSize, pageable.getSort()));
         }
         else {
             System.out.println("filterRequet is nnull");
-            talents = talentRepository.findAll(PageRequest.of(pageNumber, pageSize, pageable.getSort())).toList();
-            totalRows = talentRepository.count();
+            talentPage = talentRepository.findAll(PageRequest.of(pageNumber, pageSize, pageable.getSort()));
         }
         
-        if (talents == null || talents.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        List<TalentsDto> talentDtos = talents
+        List<TalentsDto> talentDtos = new ArrayList<>();
+        talentDtos = talentPage.toList()
                     .stream()
                     .map(talent -> {
-                        String imageUrl = minioSrvc.getUrl(talent.getTalentPhotoFilename(),"talent-center-app");
+                        String imageUrl = minioSrvc.getUrl(talent.getTalentPhotoFilename(),"talent-dev");
                         talent.setTalentPhotoFilename(imageUrl);
-                        String cvUrl = minioSrvc.getUrl(talent.getTalentCvFilename(), "talent-center-app");
+                        String cvUrl = minioSrvc.getUrl(talent.getTalentCvFilename(), "talent-dev");
                         talent.setTalentCvFilename(cvUrl);
                         return TalentsDto.map(talent);
-                    })
-                    .toList();
-        return ResponseEntity.ok().body(
-            ApiResponse.builder()
-                .total(talentDtos.size())
-                .data(talentDtos)
-                .message("Berhasil mengambil list talent")
-                .status(HttpStatus.OK.toString())
-                .statusCode(HttpStatus.OK.value())
-                .totalRows(totalRows)
-                .build()
-        );
+                    }).toList();
+        return ResponseUtil.createResponse(HttpStatus.OK, "Daftar talent berhasil dimuat.", talentDtos, new Meta(talentPage.getTotalPages(), pageable.getPageSize(), pageable.getPageNumber()));
     }
 
-    public ResponseEntity<Object> getTalent(UUID talentId) {
-        Talent talent = talentRepository.findById(talentId).orElse(null);
-        if (talent == null) {
-            return ResponseEntity.notFound().build();
-        }
-        String imageUrl = minioSrvc.getUrl(talent.getTalentPhotoFilename(),"talent-center-app");
-        String cvUrl = minioSrvc.getUrl(talent.getTalentCvFilename(), "talent-center-app");
-        
+    public ResponseEntity<MessageResponse> getTalent(String talentId) {
+        UUID talentUuid = UUID.fromString(talentId);
+        Talent talent = talentRepository.findById(talentUuid).orElseThrow(() -> new DataNotFoundException("Data talent tidak ditemukan."));
+        String imageUrl = minioSrvc.getUrl(talent.getTalentPhotoFilename(),"talent-dev");
+        String cvUrl = minioSrvc.getUrl(talent.getTalentCvFilename(), "talent-dev");
         TalentDetailDto talentDto = TalentDetailDto.mapToDto(talent);
         talentDto.setTalentCvUrl(cvUrl);
         talentDto.setTalentPhotoUrl(imageUrl);
-        return ResponseEntity.ok().body(
-            ApiResponse.builder()
-                .message("Berhasil mengambil data talent: " + talentDto.getTalentName())
-                .data(talentDto)
-                .status(HttpStatus.OK.toString())
-                .statusCode(HttpStatus.OK.value())
-                .build()
-        );
+        return ResponseUtil.createResponse(HttpStatus.OK, "Data detail talent berhasil dimuat.", talentDto);
     }
 }

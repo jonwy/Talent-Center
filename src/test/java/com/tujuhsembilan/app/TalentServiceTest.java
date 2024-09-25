@@ -29,7 +29,7 @@ import org.springframework.http.ResponseEntity;
 
 import com.tujuhsembilan.app.dto.TalentsDto;
 import com.tujuhsembilan.app.dto.request.TalentsFilterRequest;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.model.Talent;
 import com.tujuhsembilan.app.repository.EmployeeStatusRepository;
 import com.tujuhsembilan.app.repository.PositionRepository;
@@ -103,10 +103,10 @@ public class TalentServiceTest {
         // when(talentRepository.findAll(any(Pageable.class))).thenReturn(talentPage);
         when(talentRepository.findAll(pageable)).thenReturn(talentPage);
 
-        ResponseEntity<Object> response = talentService.getTalents(PageRequest.of(0, 8), null);
+        ResponseEntity<MessageResponse> response = talentService.getTalents(PageRequest.of(0, 8), null);
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse success = (ApiResponse) response.getBody();
+        MessageResponse success = (MessageResponse) response.getBody();
         List<TalentsDto> talentResult = (List<TalentsDto>) success.getData();
         ModelMapper mapper = new ModelMapper();
         assertNotNull(talentResult);
@@ -133,7 +133,7 @@ public class TalentServiceTest {
         System.out.println("talentPage: " + talentPage.toList().size());
         when(talentRepository.findAll(any(Specification.class), any(Pageable.class))).thenReturn(talentPage);
 
-        ResponseEntity<Object> response = talentService.getTalents(PageRequest.of(0, 8), filterRequest);
+        ResponseEntity<MessageResponse> response = talentService.getTalents(PageRequest.of(0, 8), filterRequest);
         System.out.println(response.getStatusCode().toString());
         
         verify(talentRepository).findAll(any(Specification.class), any(Pageable.class));
@@ -141,21 +141,23 @@ public class TalentServiceTest {
 
     @Test
     public void getTalent_WithCorrectTalentId_ReturnTalent() {
-        UUID talentUuid = UUID.fromString("0190de8c-1ed9-7115-8ae5-e0a2d06fb866");
+        UUID talentUuid = UUID.fromString("0190de8c-1ef8-7115-8ae5-2132306fb866");
+        String talentUuidString = "0190de8c-1ef8-7115-8ae5-2132306fb866";
         Optional<Talent> talent = Optional.of(
                                 talents.stream()
                                         .filter(item -> item.getTalentId().equals(talentUuid)).findFirst().get());
         when(talentRepository.findById(talentUuid)).thenReturn(talent);
-        ResponseEntity<Object> response = talentService.getTalent(talentUuid);
+        ResponseEntity<MessageResponse> response = talentService.getTalent(talentUuidString);
     }
 
     @Test
     public void getTalent_WithIncorrectTalentId_ReturnNull() {
         UUID talentUuid = UUID.fromString("0190de8c-1ef8-7115-8ae5-2132306fb866");
+        String talentUuidString = "0190de8c-1ef8-7115-8ae5-2132306fb866";
         Optional<Talent> talent = talents.stream()
                                     .filter(item -> item.getTalentId().equals(talentUuid)).findFirst();
         when(talentRepository.findById(talentUuid)).thenReturn(talent);
-        ResponseEntity<Object> response = talentService.getTalent(talentUuid);
+        ResponseEntity<MessageResponse> response = talentService.getTalent(talentUuidString);
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 

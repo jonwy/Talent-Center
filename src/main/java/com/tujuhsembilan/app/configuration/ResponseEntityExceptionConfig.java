@@ -1,12 +1,5 @@
 package com.tujuhsembilan.app.configuration;
 
-import com.toedter.spring.hateoas.jsonapi.JsonApiError;
-import com.toedter.spring.hateoas.jsonapi.JsonApiErrors;
-import com.tujuhsembilan.app.exception.MultipleException;
-
-import jakarta.persistence.EntityNotFoundException;
-import lib.i18n.utility.MessageUtil;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,11 +13,16 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.lang.Nullable;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.toedter.spring.hateoas.jsonapi.JsonApiError;
+import com.toedter.spring.hateoas.jsonapi.JsonApiErrors;
+import com.tujuhsembilan.app.exception.MultipleException;
+
+import jakarta.persistence.EntityNotFoundException;
+import lib.i18n.utility.MessageUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@ControllerAdvice
+// @ControllerAdvice
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ResponseEntityExceptionConfig extends ResponseEntityExceptionHandler {
 

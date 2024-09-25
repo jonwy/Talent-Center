@@ -18,7 +18,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.model.EmployeeStatus;
 import com.tujuhsembilan.app.model.Skillset;
 import com.tujuhsembilan.app.model.SkillsetType;
@@ -72,11 +72,11 @@ public class MasterServiceTest {
         );
         when(talentLevelRepository.findAll()).thenReturn(talentList);
 
-        ResponseEntity<ApiResponse>response = masterService.getLevelOptionLists();
+        ResponseEntity<MessageResponse>response = masterService.getLevelOptionLists();
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse body = response.getBody();
-        assertEquals(3, body.getTotal());  
+        MessageResponse body = response.getBody();
+        assertEquals(3, body.getMeta().getPageSize());  
     }
 
     @Test
@@ -87,11 +87,11 @@ public class MasterServiceTest {
         );
         when(employeeStatusRepository.findAll()).thenReturn(employeeStatusList);
 
-        ResponseEntity<ApiResponse>response = masterService.getEmployeeStatusOptionLists();
+        ResponseEntity<MessageResponse>response = masterService.getEmployeeStatusOptionLists();
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse body = response.getBody();
-        assertEquals(2, body.getTotal());  
+        MessageResponse body = response.getBody();
+        assertEquals(2, body.getMeta().getPageSize());  
     }
 
     @Test
@@ -105,10 +105,10 @@ public class MasterServiceTest {
         );
         when(skillsetRepository.findAll()).thenReturn(skillsets);
 
-        ResponseEntity<ApiResponse>response = masterService.getSkillsetOptionLists();
+        ResponseEntity<MessageResponse>response = masterService.getSkillsetOptionLists();
         assertNotNull(response);
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        ApiResponse body = response.getBody();
-        assertEquals(5, body.getTotal());  
+        MessageResponse body = response.getBody();
+        assertEquals(5, body.getMeta().getPageSize());  
     }
 }

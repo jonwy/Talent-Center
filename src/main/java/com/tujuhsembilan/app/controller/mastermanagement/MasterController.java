@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.service.mastermanagement.MasterService;
 
 @RestController
@@ -18,33 +18,33 @@ public class MasterController {
         this.masterService = masterService;
     }
 
-    @GetMapping("/talent-level-option-lists")
-    public ResponseEntity<ApiResponse> getLevelOptionLists() {
+    @GetMapping("/talent-level-option-list")
+    public ResponseEntity<MessageResponse> getLevelOptionLists() {
         return masterService.getLevelOptionLists();
     }
 
-    @GetMapping("/talent-status-option-lists")
-    public ResponseEntity<ApiResponse> getTalentStatusOptionLists() {   
+    @GetMapping("/talent-status-option-list")
+    public ResponseEntity<MessageResponse> getTalentStatusOptionLists() {   
         return masterService.getTalentStatusOptionLists();
     }
 
-    @GetMapping("/employee-status-option-lists")
-    public ResponseEntity<ApiResponse> getEmployeeStatusOptionLists() {
+    @GetMapping("/employee-status-option-list")
+    public ResponseEntity<MessageResponse> getEmployeeStatusOptionLists() {
         return masterService.getEmployeeStatusOptionLists();
     }
 
-    @GetMapping("/skill-set-option-lists")
-    public ResponseEntity<ApiResponse> getSkillSetOptionLists() {
+    @GetMapping("/skillset-option-list")
+    public ResponseEntity<MessageResponse> getSkillSetOptionLists() {
         return masterService.getSkillsetOptionLists();
     }
 
-    @GetMapping("/talent-position-option-lists")
-    public ResponseEntity<ApiResponse> getTalentPositionOptionLists() {
+    @GetMapping("/talent-position-option-list")
+    public ResponseEntity<MessageResponse> getTalentPositionOptionLists() {
         return masterService.getTalentPositionOptionLists();
     }
 
-    @GetMapping("/talent-request-status-option-lists")
-    public ResponseEntity<ApiResponse> getTalentRequestStatusOptionLists() {
+    @GetMapping("/talent-request-status-option-list")
+    public ResponseEntity<MessageResponse> getTalentRequestStatusOptionLists() {
         return masterService.getTalentRequestStatusOptionLists();
     }
 }

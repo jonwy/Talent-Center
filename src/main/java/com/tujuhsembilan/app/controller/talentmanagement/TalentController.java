@@ -1,9 +1,9 @@
 package com.tujuhsembilan.app.controller.talentmanagement;
 
 import java.io.IOException;
-import java.util.UUID;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,15 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tujuhsembilan.app.dto.request.SaveTalentRequest;
 import com.tujuhsembilan.app.dto.request.TalentApprovalRequest;
 import com.tujuhsembilan.app.dto.request.TalentApprovalsFilterRequest;
 import com.tujuhsembilan.app.dto.request.TalentsFilterRequest;
-import com.tujuhsembilan.app.dto.response.ApiResponse;
+import com.tujuhsembilan.app.dto.response.MessageResponse;
 import com.tujuhsembilan.app.service.mastermanagement.AdminService;
 import com.tujuhsembilan.app.service.talentmanagement.TalentApprovalService;
 import com.tujuhsembilan.app.service.talentmanagement.TalentService;
@@ -49,7 +47,7 @@ public class TalentController {
     }
     
     @GetMapping("/talents")
-    public ResponseEntity<Object> getTalents(
+    public ResponseEntity<MessageResponse> getTalents(
         @PageableDefault(
             page = 0, 
             size = 8,
@@ -61,26 +59,26 @@ public class TalentController {
     }
 
     @GetMapping("/talents/{talentId}")
-    public ResponseEntity<Object> getMethodName(@PathVariable UUID talentId) {
+    public ResponseEntity<MessageResponse> getTalentDetail(@PathVariable String talentId) {
         return talentService.getTalent(talentId);
     }
     
     @PostMapping(path = "/talents", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<ApiResponse> saveTalent( @RequestParam("files") MultipartFile[] files, @RequestParam(name = "requestFile") MultipartFile requestFile) throws IOException {
+    public ResponseEntity<MessageResponse> saveTalent(@RequestParam MultipartFile[] files, @RequestParam(name = "requestFile") MultipartFile requestFile) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         SaveTalentRequest request = objectMapper.readValue(requestFile.getInputStream(), SaveTalentRequest.class);
         return adminService.saveTalent(files, request);
     }
 
     @PutMapping(path = "/talents", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<ApiResponse> updateDataTalent(@RequestParam(name = "files", required = false) MultipartFile[] files, @RequestParam(name = "requestFile") MultipartFile requestFile) throws IOException {
+    public ResponseEntity<MessageResponse> updateDataTalent(@RequestParam(name = "files", required = false) MultipartFile[] files, @RequestParam(name = "requestFile") MultipartFile requestFile) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         SaveTalentRequest request = objectMapper.readValue(requestFile.getInputStream(), SaveTalentRequest.class);
         return adminService.updateDataTalent(files, request);
     }
 
     @GetMapping("/talent-approvals")
-    public ResponseEntity<ApiResponse> getTalentAprovalList(
+    public ResponseEntity<MessageResponse> getTalentAprovalList(
                 @PageableDefault(
                     page = 0, 
                     size = 8,
@@ -90,12 +88,12 @@ public class TalentController {
     }
 
     @PutMapping("/talent-approvals")
-    public ResponseEntity<ApiResponse> approveTalentRequest(@RequestBody TalentApprovalRequest request) {
+    public ResponseEntity<MessageResponse> approveTalentRequest(@RequestBody TalentApprovalRequest request) {
         return talentApprovalService.approveTalentRequest(request);
     }
 
     @PostMapping(path = "/bulk-insert", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<ApiResponse> bulkInserts( @RequestParam("files") MultipartFile[] files, @RequestParam(name = "requestFile") MultipartFile requestFile) throws IOException {
+    public ResponseEntity<MessageResponse> bulkInserts( @RequestParam("files") MultipartFile[] files, @RequestParam(name = "requestFile") MultipartFile requestFile) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         SaveTalentRequest request = objectMapper.readValue(requestFile.getInputStream(), SaveTalentRequest.class);
         return adminService.saveTalent2(files, request);
